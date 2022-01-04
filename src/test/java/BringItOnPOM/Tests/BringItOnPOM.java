@@ -29,6 +29,7 @@ public class BringItOnPOM {
     public void browserSetup() {
         driver = new ChromeDriver();
         actions = new Actions(driver);
+        driver.manage().window().maximize();
         driver.get("https://pastebin.com");
         objPasteBinHomePage = new PasteBinHomePage(driver);
             //use ESCAPE to stop page downloading,

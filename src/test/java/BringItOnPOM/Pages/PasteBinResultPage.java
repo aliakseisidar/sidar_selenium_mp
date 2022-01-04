@@ -2,6 +2,8 @@ package BringItOnPOM.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PasteBinResultPage {
     WebDriver driver;
@@ -20,10 +22,14 @@ public class PasteBinResultPage {
     }
 
     public String getSyntaxHighlighting(){
+        new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated(SyntaxHighlightingValue));
         return driver.findElement(SyntaxHighlightingValue).getText();
     }
 
     public String getPasteText(){
+        new WebDriverWait(driver, 10)
+                .until(ExpectedConditions.presenceOfElementLocated(PasteText));
         return driver.findElement(PasteText).getText();
     }
 
